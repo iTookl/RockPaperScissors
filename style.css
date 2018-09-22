@@ -1,0 +1,102 @@
+* {
+	font-family: 'Mukta', sans-serif;
+}
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.wraper {
+	width: 100%;
+	height: 100%;
+}
+.firstColumnIcon {
+	width: 125px;
+	height: 125px;
+}
+.secondColumnIcon {
+	width: 125px;
+	height: 125px;
+}
+
+.flexForInterface {
+	display: flex;
+	flex-direction: row;
+	width: 500px;
+}
+.flexForIconsIMG {
+	display: flex;
+	flex-direction: column;
+}
+.buttonToCenter {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+	height: 40px;
+	width: 100px;
+}
+.myChoose {
+	width: 125px;
+	height: 125px;
+	border: 1px solid black;
+}
+.enemyChoose {
+	width: 125px;
+	height: 125px;
+	border: 1px solid black;
+}
+.timer {
+	width: 125px;
+	height: 125px;
+	border: 1px solid black;
+}
+.flexForBut {
+	display: flex;
+	flex-direction: column;
+}
+.flexForDivs {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.forCenter {
+	width: 100%;
+    height: 100%;
+    margin-top: 8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center; 
+    justify-content: center; 
+    overflow: auto;
+} 
+
+.scoreUser {
+	padding: 0;
+	text-align: center;
+	width: 125px;
+	height: 125px;
+	font-size: 100px;
+} 
+.colon {
+	padding: 0;
+	text-align: center;
+	width: 125px;
+	height: 125px;
+	font-size: 100px;
+}
+.scoreBot {
+	padding: 0;
+	text-align: center;
+	width: 125px;
+	height: 125px;
+	font-size: 100px;
+}
