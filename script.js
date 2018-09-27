@@ -8,6 +8,7 @@
 const icons = document.getElementsByClassName('firstColumnIcon');
 const myChoose = document.getElementById('myChoose');
 const button = document.getElementById('button');
+const buttonStop = document.getElementById('buttonStop');
 const timer = document.getElementById('timer');
 const enemyChoose = document.getElementById('enemyChoose');
 const selectScoreUser = document.getElementById('scoreUser');
@@ -59,90 +60,72 @@ function clickOnButton(){
 	rand = Math.floor(Math.random() * 3) + 1; // random number to select the move
 	enemyChoose.appendChild(secondIco); // adding img to div
 
-	// check which rand num is a icon
-	/*switch (rand) {
-		case 1:
-			secondIco.src = `ico-1.png`;
-			moveBot = 'paper';
-			break;
-		case 2:
-			secondIco.src = `ico-2.png`;
-			moveBot = 'rock';
-			break;
-		case 3:
-			secondIco.src = `ico-3.png`;
-			moveBot = 'scissors';
-			break;
+	//show the timer
+	let numberOfSecond = 3;
+	setTimeout(count, 1000);
+	function count() {
+	    numberOfSecond--;
+	    if (numberOfSecond > 0) {
+	      setTimeout(count, 1000);
+	    } 
+	    if (numberOfSecond === 0) {
+	    	numberOfSecond = 4;
+	    	count();//show again timer after 3sec over & over again before user's click "Stop game"
+	    	buttonStop.onclick = function () {
+				clearTimeout(count);
+			}
+	    }
+	    timer.innerHTML = numberOfSecond;
+	}
+
+/*buttonStop.onclick = function () {
+		console.log('clicked!');
+		clearInterval(autoRun);
 	}*/
-
-	//algoritm of the game
-	/*if (moveBot === moveUser) {
-		console.log('draw');
-	}
-	else if (moveUser === 'paper' && moveBot === 'rock') {
-		console.log('user win!');
-		scoreUser += 1; 
-		selectScoreUser.innerHTML = scoreUser;
-	}
-	else if (moveUser === 'rock' && moveBot === 'scissors') {
-		console.log('user win!');	
-		scoreUser += 1;
-		selectScoreUser.innerHTML = scoreUser;
-	}
-	else if (moveUser === 'scissors' && moveBot === 'paper') {
-		console.log('user win!');
-		scoreUser += 1;
-		selectScoreUser.innerHTML = scoreUser;
-	} else {
-		console.log('you lose!');
-		scoreBot += 1;
-		selectScoreBot.innerHTML = scoreBot;
-
-	}*/
-
-	let timeDelay = 1000;
-	setTimeout(() => {
-		console.log(timeDelay);
+	let timeDelay = 3000;
+	let delay = (() => {
+			//bot choose
 		switch (rand) {
-		case 1:
-			secondIco.src = `ico-1.png`;
-			moveBot = 'paper';
-			break;
-		case 2:
-			secondIco.src = `ico-2.png`;
-			moveBot = 'rock';
-			break;
-		case 3:
-			secondIco.src = `ico-3.png`;
-			moveBot = 'scissors';
-			break;
-	}
-	if (moveBot === moveUser) {
-		console.log('draw');
-	}
-	else if (moveUser === 'paper' && moveBot === 'rock') {
-		console.log('user win!');
-		scoreUser += 1; 
-		selectScoreUser.innerHTML = scoreUser;
-	}
-	else if (moveUser === 'rock' && moveBot === 'scissors') {
-		console.log('user win!');	
-		scoreUser += 1;
-		selectScoreUser.innerHTML = scoreUser;
-	}
-	else if (moveUser === 'scissors' && moveBot === 'paper') {
-		console.log('user win!');
-		scoreUser += 1;
-		selectScoreUser.innerHTML = scoreUser;
-	} else {
-		console.log('you lose!');
-		scoreBot += 1;
-		selectScoreBot.innerHTML = scoreBot;
+			case 1:
+				secondIco.src = `ico-1.png`;
+				moveBot = 'paper';
+				break;
+			case 2:
+				secondIco.src = `ico-2.png`;
+				moveBot = 'rock';
+				break;
+			case 3:
+				secondIco.src = `ico-3.png`;
+				moveBot = 'scissors';
+				break;
+		}
+		//algoritm of the game
+		if (moveBot === moveUser) {
+			console.log('draw');
+		}
+		else if (moveUser === 'paper' && moveBot === 'rock') {
+			console.log('user win!');
+			scoreUser += 1; 
+			selectScoreUser.innerHTML = scoreUser;
+		}
+		else if (moveUser === 'rock' && moveBot === 'scissors') {
+			console.log('user win!');	
+			scoreUser += 1;
+			selectScoreUser.innerHTML = scoreUser;
+		}
+		else if (moveUser === 'scissors' && moveBot === 'paper') {
+			console.log('user win!');
+			scoreUser += 1;
+			selectScoreUser.innerHTML = scoreUser;
+		} else {
+			console.log('you lose!');
+			scoreBot += 1;
+			selectScoreBot.innerHTML = scoreBot;
 
-	}
-	}, timeDelay);
+		}
+	});
+	let autoRun = setInterval(delay, timeDelay);//run the game over and over again before user's scick on "stop game" 
 }
-
 
 
 

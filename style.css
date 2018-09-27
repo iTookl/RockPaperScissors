@@ -33,10 +33,27 @@ body {
 	display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
 }
-.button {
+.buttonStart {
 	height: 40px;
 	width: 100px;
+	margin-right: 5px; 
+	background: #46e246;
+    color: #fff;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+.buttonStop {
+	height: 40px;
+	width: 100px;
+
+	background: #ff3131;
+    color: #fff;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 }
 .myChoose {
 	width: 125px;
@@ -94,6 +111,13 @@ body {
 	font-size: 100px;
 }
 .scoreBot {
+	padding: 0;
+	text-align: center;
+	width: 125px;
+	height: 125px;
+	font-size: 100px;
+}
+.timer {
 	padding: 0;
 	text-align: center;
 	width: 125px;
