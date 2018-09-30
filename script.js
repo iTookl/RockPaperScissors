@@ -120,10 +120,7 @@ function clickOnButton(){
 			console.log('user win!');
 			scoreUser += 1;
 			selectScoreUser.innerHTML = scoreUser;
-		} else if (moveUser === '') {
-			scoreBot = scoreBot;
-			scoreUser = scoreUser;
-		} else if (moveBot === '') {
+		} else if (moveUser === '' | moveBot === '') {
 			scoreBot = scoreBot;
 			scoreUser = scoreUser;
 		} else {
