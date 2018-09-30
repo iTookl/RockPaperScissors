@@ -14,6 +14,7 @@ body {
 .firstColumnIcon {
 	width: 125px;
 	height: 125px;
+	cursor: pointer;
 }
 .secondColumnIcon {
 	width: 125px;

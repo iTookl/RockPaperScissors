@@ -8,7 +8,7 @@
 const icons = document.getElementsByClassName('firstColumnIcon');
 const myChoose = document.getElementById('myChoose');
 const button = document.getElementById('button');
-const buttonStop = document.getElementById('buttonStop');
+/*const buttonStop = document.getElementById('buttonStop');*/
 const timer = document.getElementById('timer');
 const enemyChoose = document.getElementById('enemyChoose');
 const selectScoreUser = document.getElementById('scoreUser');
@@ -24,7 +24,6 @@ secondIco.style.height = '125px';
 
 
 let check = 0;
-let rand = 0;
 let moveUser = '';
 let moveBot = '';
 let scoreUser = 0;
@@ -57,35 +56,25 @@ for (let i = 0; i < icons.length; i++) {
 
 button.addEventListener('click', clickOnButton);
 function clickOnButton(){
-	rand = Math.floor(Math.random() * 3) + 1; // random number to select the move
+	/*rand = Math.floor(Math.random() * 3) + 1; // random number to select the move*/
 	enemyChoose.appendChild(secondIco); // adding img to div
 
 	//show the timer
-	let numberOfSecond = 3;
+	let numberOfSecond = 4;
 	setTimeout(count, 1000);
 	function count() {
+		let rand = Math.floor(Math.random() * 3) + 1; // random number to select the move
 	    numberOfSecond--;
+	    //algoritm of the game
 	    if (numberOfSecond > 0) {
 	      setTimeout(count, 1000);
 	    } 
 	    if (numberOfSecond === 0) {
 	    	numberOfSecond = 4;
 	    	count();//show again timer after 3sec over & over again before user's click "Stop game"
-	    	buttonStop.onclick = function () {
-				clearTimeout(count);
-			}
-	    }
-	    timer.innerHTML = numberOfSecond;
-	}
 
-/*buttonStop.onclick = function () {
-		console.log('clicked!');
-		clearInterval(autoRun);
-	}*/
-	let timeDelay = 3000;
-	let delay = (() => {
-			//bot choose
-		switch (rand) {
+	    	//bot choose
+	    	switch (rand) {
 			case 1:
 				secondIco.src = `ico-1.png`;
 				moveBot = 'paper';
@@ -99,6 +88,20 @@ function clickOnButton(){
 				moveBot = 'scissors';
 				break;
 		}
+
+	    	/*buttonStop.onclick = function () {
+				clearTimeout(count);
+			}*/
+	    }
+	    timer.innerHTML = numberOfSecond;
+	}
+
+/*buttonStop.onclick = function () {
+		console.log('clicked!');
+		clearInterval(autoRun);
+	}*/
+	let timeDelay = numberOfSecond * 1000;
+	let delay = (() => {
 		//algoritm of the game
 		if (moveBot === moveUser) {
 			console.log('draw');
@@ -117,14 +120,16 @@ function clickOnButton(){
 			console.log('user win!');
 			scoreUser += 1;
 			selectScoreUser.innerHTML = scoreUser;
+		} else if (moveUser === '') {
+			scoreBot = scoreBot;
+			scoreUser = scoreUser;
 		} else {
 			console.log('you lose!');
 			scoreBot += 1;
 			selectScoreBot.innerHTML = scoreBot;
-
 		}
 	});
-	let autoRun = setInterval(delay, timeDelay);//run the game over and over again before user's scick on "stop game" 
+	setInterval(delay, timeDelay);//run the game over and over again before user's scick on "stop game" 
 }
 
 
