@@ -123,8 +123,12 @@ function clickOnButton(){
 		} else if (moveUser === '') {
 			scoreBot = scoreBot;
 			scoreUser = scoreUser;
+		} else if (moveBot === '') {
+			scoreBot = scoreBot;
+			scoreUser = scoreUser;
 		} else {
 			console.log('you lose!');
+			console.log(`moveUser: ${moveUser} \n moveBot: ${moveBot}`);
 			scoreBot += 1;
 			selectScoreBot.innerHTML = scoreBot;
 		}
