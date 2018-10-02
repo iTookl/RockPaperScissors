@@ -46,7 +46,7 @@ body {
     cursor: pointer;
     outline: inherit;
 }
-.buttonStop {
+/* .buttonStop {
 	height: 40px;
 	width: 100px;
 
@@ -55,7 +55,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: inherit;
-}
+} */
 .myChoose {
 	width: 125px;
 	height: 125px;
