@@ -66,19 +66,16 @@ button.addEventListener('click', clickOnButton);
 			active = 0;
 			button.textContent = 'Let\'s start';
 			button.style.backgroundColor = '#46e246';
-
 		}
 	}
 function clickOnButton(){
-	let interval = null;
-	let timeOut = null;
 	if (active === 0) {
 		enemyChoose.appendChild(secondIco); // adding img to div
 
 		//show the timer
 		let numberOfSecond = 4;
-		timeOut = setTimeout(count, 1000);
-		function count() {
+		setTimeout(count, 1000);
+		let count = (() => {
 			let rand = Math.floor(Math.random() * 3) + 1; // random number to select the move
 		    numberOfSecond--;
 		    if (numberOfSecond > 0) {
@@ -105,7 +102,7 @@ function clickOnButton(){
 				}
 		    }
 		    timer.innerHTML = numberOfSecond;
-		}
+		});
 		let timeDelay = numberOfSecond * 1000;
 		let delay = (() => {
 			//algoritm of the game
@@ -136,10 +133,8 @@ function clickOnButton(){
 				selectScoreBot.innerHTML = scoreBot;
 			}
 		});
-		interval = setInterval(delay, timeDelay);//run the game over and over again before user's scick on "stop game" 
+		setInterval(delay, timeDelay);//run the game over and over again before user's scick on "stop game" 
 	} else {
-		clearInterval(interval);
-		clearTimeout(timeOut);
 		return;
 	}
 }
