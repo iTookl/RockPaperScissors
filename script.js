@@ -63,7 +63,7 @@ const options = {
 	startSec: 3, // how many sec you want 
 	currentSec: 0,
 	delay: 1000,
-	rand: Math.floor(Math.random() * 3) + 1, 
+	rand: /*Math.floor(Math.random() * 3) + 1*/ 0, 
 	btnText: {
 		stop: 'Stop', // text for button in different status
 		start: 'Let\'s start'
