@@ -7,32 +7,26 @@
 	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet"> 
 </head>
 <body>
-<!--
-	 ico-1 = paper
-	 ico-2 = rock
-	 ico-3 = scissors
--->
  	<div class="wraper">
-		<h1 class="titleOfGame">Rock Paper Scissors</h1>
-		<p class="rulesOfGame">You have 3 seconds to choose your figure.<br>
-			Scissors: can win if your competitor choose paper, but if your competitor choose rock you lose.<br>
-			Rock: can win if your competitor choose scissors, but if your competitor choose paper you lose.<br>
-			Paper: can win if your competitor choose rock, but if your competitor choose scissors you lose.
-		</p>
+ 		<div class="game-rules">
+ 			<h1 class="titleOfGame">Rock Paper Scissors Rules</h1>
+			<ul>
+				<li>Select your moove</li>
+				<li>Click on start button</li>
+				<li>Wait for computer moove</li>
+			</ul>
+ 		</div>
 		
-		 <div class="forCenter"> 
-			<div class="flexForInterface">
-				<!-- <div class="">choose your move</div> -->
-
-				<div class="flexForIconsIMG">
+		 <div class="game-interface-wraper"> 
+			<div class="game-interface">
+				<div class="icons">
 					<img src="ico-1.png" alt="paper" class="firstColumnIcon" id="paper" name="toClick">
 					<img src="ico-2.png" alt="rock" class="firstColumnIcon" id="rock" name="toClick">
 					<img src="ico-3.png" alt="scissors" class="firstColumnIcon" id="scissors" name="toClick">
 				</div>
 
-
-				<div class="flexForButt">
-					<div class="flexForDivs">
+				<div class="game-score-wraper">
+					<div class="game-score">
 						<div class="row">
 							<div class="myChoose" id="myChoose"></div>
 							<div class="timer" id='timer'></div>
@@ -46,13 +40,12 @@
 						</div>
 					</div>
 
-					<div class="buttonToCenter">
+					<div class="button">
 						<button class="buttonStart" id="button">Let's start</button>
-						<!-- <button class="buttonStop" id="buttonStop">Stop Game</button> -->
 					</div>
 				</div>
 
-				<div class="flexForIconsIMG">
+				<div class="icons">
 					<img src="ico-1.png" alt="paper" class="secondColumnIcon">
 					<img src="ico-2.png" alt="rock" class="secondColumnIcon">
 					<img src="ico-3.png" alt="scissors" class="secondColumnIcon">
